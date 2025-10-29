@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainActivity">
+
+    <!-- Camera Preview -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Bounding Box Overlay -->
+    <com.example.ardogs.BoundingBoxOverlay
+        android:id="@+id/overlayView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Info Panel -->
+    <LinearLayout
+        android:id="@+id/infoPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/info_panel_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvAppTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AR Dog Detector"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/tvDetectionCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detected: 0 dog(s)"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/tvTopDetection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No dogs detected"
+            android:textColor="#FFD700"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/tvStatusLog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ready - Tap Start to detect"
+            android:textColor="#CCCCCC"
+            android:textSize="12sp"
+            android:layout_marginTop="12dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="monospace" />
+
+        <TextView
+            android:id="@+id/tvPerformanceMetrics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#88FF88"
+            android:textSize="11sp"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="monospace" />
+
+    </LinearLayout>
+
+    <!-- Fun Fact Panel - AR Immersive Info -->
+    <LinearLayout
+        android:id="@+id/funFactPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/info_panel_background"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/btnToggleDetection"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvFunFactTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🐕 Did You Know?"
+            android:textColor="#FFD700"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/tvFunFact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp" />
+
+        <TextView
+            android:id="@+id/tvBreedOrigin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#AAAAAA"
+            android:textSize="13sp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <!-- Control Button -->
+    <Button
+        android:id="@+id/btnToggleDetection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Detection"
+        android:textSize="16sp"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="16dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ARDogs</string>
+    <string name="model_loading_failed">Model loading failed</string>
+    <string name="detected_dogs">Detected: %1$d dog(s)</string>
+    <string name="top_detection">%1$s - %2$d%%</string>
+    <string name="no_dogs_detected">No dogs detected</string>
+    <string name="start_detection">Start Detection</string>
+    <string name="stop_detection">Stop Detection</string>
+    <string name="camera_permission_required">Camera permission is required to use this app</string>
+    <string name="camera_initialization_failed">Camera initialization failed</string>
+    <string name="status_initializing">Initializing model...</string>
+    <string name="status_ready">Ready - Tap Start to detect</string>
+    <string name="status_processing">Processing frame...</string>
+    <string name="status_inference">Running model inference...</string>
+    <string name="status_results">Frame: %1$dms | Model: %2$dms | FPS: %3$.1f</string>
+</resources>
